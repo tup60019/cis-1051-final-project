@@ -23,7 +23,7 @@ public class ClimberController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             spriteRenderer.color = Color.yellow;
-            Instantiate(basket);
+            GameObject bascet = Instantiate(basket, transform.position, transform.rotation);
             StartCoroutine(Colorer());
 
         }
@@ -35,6 +35,7 @@ public class ClimberController : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         yield return new WaitForSeconds(0.5f);
         spriteRenderer.color = Color.green;
-        //Destroy(basket);
+        GameObject bascet = GameObject.Find("Basket(Clone)");
+        Destroy(bascet);
     }
 }
