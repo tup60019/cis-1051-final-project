@@ -18,7 +18,7 @@ public class AppleSpawner : MonoBehaviour
 
     IEnumerator ThrowApple()
     {
-        while (true)
+        for(int i = 0; i < 8; i++)
         {
             xVel = Random.Range(50, 300);
             GameObject ball = Instantiate(apple, transform.position, transform.rotation);

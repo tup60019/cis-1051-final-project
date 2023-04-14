@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AppleSpawnerR : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class AppleSpawnerR : MonoBehaviour
     IEnumerator ThrowAppleR()
     {
         yield return new WaitForSeconds(1);
-        while (true)
+        for (int i = 0; i < 8; i++)
         {
             
             xVelR = Random.Range(50, 300);
@@ -25,6 +26,7 @@ public class AppleSpawnerR : MonoBehaviour
             ball.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(xVelR, yVelR));
             yield return new WaitForSeconds(2);
         }
-
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(2);
     }
 }

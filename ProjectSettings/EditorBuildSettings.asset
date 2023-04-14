@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1027892e05462c246ae712e864d8add5
+  - enabled: 1
     path: Assets/Scenes/AppleBasket.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Hills.unity
+    guid: 06bd1abca6fcc884092175fc80e0b76c
   m_configObjects: {}
