@@ -25,6 +25,6 @@ public class AppleSpawner : MonoBehaviour
             ball.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(xVel, yVel));
             yield return new WaitForSeconds(2);
         }
-
+        
     }
 }

@@ -11,6 +11,7 @@ public class AppleSpawnerR : MonoBehaviour
     void Start()
     {
         StartCoroutine(ThrowAppleR());
+        
     }
 
 
@@ -27,6 +28,7 @@ public class AppleSpawnerR : MonoBehaviour
             yield return new WaitForSeconds(2);
         }
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(2);
+        //do stuff to transition
+        
     }
 }
