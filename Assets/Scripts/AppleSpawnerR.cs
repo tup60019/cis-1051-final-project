@@ -8,6 +8,7 @@ public class AppleSpawnerR : MonoBehaviour
     private float xVelR;
     private float yVelR = 300;
     public GameObject apple;
+    public MainManager mainManager;
     void Start()
     {
         StartCoroutine(ThrowAppleR());
@@ -29,6 +30,15 @@ public class AppleSpawnerR : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         //do stuff to transition
+        mainManager.cameraPos = -2.2f;
+        yield return new WaitForSeconds(3);
+        GameObject[] toDelete = GameObject.FindGameObjectsWithTag("AppleBasket");
+        for (int i = 0; i < toDelete.Length; i++)
+        {
+            Destroy(toDelete[i]);
+        }
+        
+        
         
     }
 }

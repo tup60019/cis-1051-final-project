@@ -8,6 +8,7 @@ public class MainManager : MonoBehaviour
     public GameObject gameOverScreen;
     public int mistakes = 0;
     public ClimberController controller;
+    public float cameraPos = -9;
 
     private void Update()
     {
