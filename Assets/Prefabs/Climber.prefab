@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.005775094}
+  m_Offset: {x: 0.00000014901161, y: -0.08620834}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.86638665}
+  m_Size: {x: 1.597893, y: 4.361764}
   m_EdgeRadius: 0
 --- !u!114 &44280942530654621
 MonoBehaviour:
@@ -149,3 +149,5 @@ MonoBehaviour:
   speed: 8
   horizInput: 0
   basket: {fileID: 402697463095986428, guid: 0bb3520a6c1e2904f814191983a9adf2, type: 3}
+  climberIsAlive: 1
+  mainManager: {fileID: 0}

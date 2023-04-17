@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClimberController : MonoBehaviour
@@ -7,6 +8,9 @@ public class ClimberController : MonoBehaviour
     public float speed = 5.0f;
     public float horizInput;
     public GameObject basket;
+    public bool climberIsAlive = true;
+    public MainManager mainManager;
+    public bool onCooldown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,24 +22,45 @@ public class ClimberController : MonoBehaviour
     {
 
         horizInput = Input.GetAxis("Horizontal");
-        transform.Translate(horizInput * Vector2.right * speed * Time.deltaTime);
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (climberIsAlive)
         {
-            spriteRenderer.color = Color.yellow;
-            GameObject bascet = Instantiate(basket, transform.position, transform.rotation);
-            StartCoroutine(Colorer());
+            transform.Translate(horizInput * Vector2.right * speed * Time.deltaTime);
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
+            if (Input.GetKeyDown(KeyCode.Space) && onCooldown == false)
+            {
+
+                GameObject bascet = Instantiate(basket, transform.position, transform.rotation);
+                StartCoroutine(Basket());
+                StartCoroutine(BasketCooldown());
+
+            }
         }
 
 
+
     }
-    IEnumerator Colorer()
+    IEnumerator Basket()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
         yield return new WaitForSeconds(0.5f);
-        spriteRenderer.color = Color.green;
+
         GameObject bascet = GameObject.Find("Basket(Clone)");
         Destroy(bascet);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Apple(Clone)")
+        {
+
+            mainManager.mistakes++;
+
+        }
+    }
+    IEnumerator BasketCooldown()
+    {
+        onCooldown = true;
+        yield return new WaitForSeconds(0.6f);
+        onCooldown = false;
     }
 }
