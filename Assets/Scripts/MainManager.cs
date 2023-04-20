@@ -9,6 +9,7 @@ public class MainManager : MonoBehaviour
     public int mistakes = 0;
     public ClimberController controller;
     public float cameraPos = -9;
+    public WaterfallClimberController waterClimber;
 
     private void Update()
     {
@@ -27,5 +28,6 @@ public class MainManager : MonoBehaviour
         gameOverScreen.SetActive(true);
         GameObject climber = GameObject.Find("Climber");
         climber.GetComponent<BoxCollider2D>().isTrigger = true;
+        waterClimber.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 }
