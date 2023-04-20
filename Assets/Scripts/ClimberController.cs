@@ -37,7 +37,10 @@ public class ClimberController : MonoBehaviour
             }
         }
 
-
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
 
     }
     IEnumerator Basket()

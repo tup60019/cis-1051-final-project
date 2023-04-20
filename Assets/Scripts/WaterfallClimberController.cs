@@ -8,6 +8,7 @@ public class WaterfallClimberController : MonoBehaviour
     public GameObject punchBox;
     public MainManager mainManager;
     private bool punchCooldown = false;
+    public ClimberController climber;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,18 @@ public class WaterfallClimberController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && punchCooldown == false)
+        if (climber.climberIsAlive)
         {
-            StartCoroutine(Punch());
+            if (Input.GetKeyDown(KeyCode.Space) && punchCooldown == false)
+            {
+                StartCoroutine(Punch());
+            }
         }
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
+
     }
     IEnumerator Punch()
     {

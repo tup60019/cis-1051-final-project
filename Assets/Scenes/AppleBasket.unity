@@ -156,7 +156,6 @@ MonoBehaviour:
   mistakes: 0
   controller: {fileID: 44280942355995939}
   cameraPos: -11
-  waterClimber: {fileID: 0}
 --- !u!4 &26929546
 Transform:
   m_ObjectHideFlags: 0
@@ -315,7 +314,7 @@ GameObject:
   - component: {fileID: 264981174}
   m_Layer: 0
   m_Name: AppleThrowerL
-  m_TagString: AppleBasket
+  m_TagString: Apple Basket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -479,7 +478,7 @@ GameObject:
   - component: {fileID: 337517068}
   m_Layer: 0
   m_Name: AppleThrowerR
-  m_TagString: AppleBasket
+  m_TagString: Apple Basket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -914,6 +913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   punchBox: {fileID: 1294651914}
   mainManager: {fileID: 26929545}
+  climber: {fileID: 44280942355995939}
 --- !u!1 &846071915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 895122239}
   m_Layer: 0
   m_Name: Apple Floor
-  m_TagString: AppleBasket
+  m_TagString: Apple Basket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 1434637783}
   m_Layer: 0
   m_Name: TreeL
-  m_TagString: AppleBasket
+  m_TagString: Apple Basket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1870,7 +1870,7 @@ GameObject:
   - component: {fileID: 1903747068}
   m_Layer: 0
   m_Name: TreeR
-  m_TagString: AppleBasket
+  m_TagString: Apple Basket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1982,6 +1982,10 @@ PrefabInstance:
     - target: {fileID: 44280942530654620, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654620, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_TagString
+      value: Climber
       objectReference: {fileID: 0}
     - target: {fileID: 44280942530654621, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: mainManager
@@ -2216,6 +2220,10 @@ PrefabInstance:
     - target: {fileID: 44280942530654620, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654620, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_TagString
+      value: Climber
       objectReference: {fileID: 0}
     - target: {fileID: 44280942530654621, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: mainManager

@@ -9,13 +9,13 @@ public class MainManager : MonoBehaviour
     public int mistakes = 0;
     public ClimberController controller;
     public float cameraPos = -9;
-    public WaterfallClimberController waterClimber;
 
     private void Update()
     {
         if (mistakes == 3)
         {
             GameOver();
+            mistakes = 0;
         }
     }
     public void RestartGame()
@@ -26,8 +26,9 @@ public class MainManager : MonoBehaviour
     {
         controller.climberIsAlive = false;
         gameOverScreen.SetActive(true);
-        GameObject climber = GameObject.Find("Climber");
+        GameObject climber = GameObject.FindGameObjectWithTag("Climber");
         climber.GetComponent<BoxCollider2D>().isTrigger = true;
-        waterClimber.GetComponent<BoxCollider2D>().isTrigger = true;
+        
+
     }
 }
