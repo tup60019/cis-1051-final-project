@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Climber
   - Apple Basket
+  - Hills
+  - Waterfall
+  - Mountains
+  - Volcano
   layers:
   - Default
   - TransparentFX

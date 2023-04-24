@@ -34,7 +34,7 @@ public class WaterfallClimberController : MonoBehaviour
     IEnumerator Punch()
     {
         punchBox.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         punchBox.SetActive(false);
 
     }

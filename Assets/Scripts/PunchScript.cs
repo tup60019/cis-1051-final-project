@@ -22,7 +22,7 @@ public class PunchScript : MonoBehaviour
         if (collision.gameObject.name == "Fish(Clone)")
         {
             GameObject hit = collision.gameObject;
-            hit.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(800, 300));
+            hit.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(300, 900));
         }
         else if (collision.gameObject.name == "Bombfish(Clone)")
         {
