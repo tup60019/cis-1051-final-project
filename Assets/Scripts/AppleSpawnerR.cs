@@ -9,6 +9,8 @@ public class AppleSpawnerR : MonoBehaviour
     private float yVelR = 300;
     public GameObject apple;
     public MainManager mainManager;
+    public GameObject hills;
+    public GameObject appleBasket;
     void Start()
     {
         StartCoroutine(ThrowAppleR());
@@ -30,14 +32,29 @@ public class AppleSpawnerR : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         //do stuff to transition
+        
         mainManager.cameraPos = -2.2f;
         yield return new WaitForSeconds(3);
-        GameObject[] toDelete = GameObject.FindGameObjectsWithTag("AppleBasket");
+        hills.SetActive(true);
+        appleBasket.SetActive(false);
+        
+        
+        /* OLD TRANSITION DO NOT USE IT'S BAD AND INEFFICIENT
+        GameObject[] toActivate = GameObject.FindGameObjectsWithTag("Hills");
+        for (int i = 0; i < toActivate.Length; i++)
+        {
+            toActivate[i].SetActive(true);
+            Debug.Log("made it");
+            Debug.Log(toActivate[i]);
+        }
+        mainManager.cameraPos = -2.2f;
+        yield return new WaitForSeconds(3);
+        GameObject[] toDelete = GameObject.FindGameObjectsWithTag("Apple Basket");
         for (int i = 0; i < toDelete.Length; i++)
         {
             Destroy(toDelete[i]);
         }
-        
+        */
         
         
     }

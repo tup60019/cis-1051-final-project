@@ -9,5 +9,4 @@ public class DetectCollisions : MonoBehaviour
         Destroy(gameObject);
         
     }
-
 }

@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - AppleBasket
+  - Climber
+  - Apple Basket
+  - Hills
+  - Waterfall
+  - Mountains
+  - Volcano
   layers:
   - Default
   - TransparentFX

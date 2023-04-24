@@ -15,17 +15,22 @@ public class MainManager : MonoBehaviour
         if (mistakes == 3)
         {
             GameOver();
+            
         }
     }
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
     public void GameOver()
     {
         controller.climberIsAlive = false;
         gameOverScreen.SetActive(true);
-        GameObject climber = GameObject.Find("Climber");
+        StopAllCoroutines();
+        GameObject climber = GameObject.FindGameObjectWithTag("Climber");
         climber.GetComponent<BoxCollider2D>().isTrigger = true;
+        mistakes = 0;
+
     }
 }
