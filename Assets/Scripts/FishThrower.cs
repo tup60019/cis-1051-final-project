@@ -32,7 +32,7 @@ public class FishThrower : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
         yield return new WaitForSeconds(1);
-        mainManager.cameraPos = 20f;
+        mainManager.cameraPos = 19f;
         yield return new WaitForSeconds(3);
         waterfall.SetActive(false);
         mountains.SetActive(true);
