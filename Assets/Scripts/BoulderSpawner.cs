@@ -17,7 +17,7 @@ public class BoulderSpawner : MonoBehaviour
         StartCoroutine(SpawnBoulders());
     }
 
-    // Update is called once per frame
+
 
     IEnumerator SpawnBoulders()
     {

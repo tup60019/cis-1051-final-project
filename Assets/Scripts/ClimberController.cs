@@ -20,7 +20,7 @@ public class ClimberController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // basic character controller from Unity Learn Junior Programmer pathway
         horizInput = Input.GetAxis("Horizontal");
         if (climberIsAlive)
         {
