@@ -38,7 +38,7 @@ public class HillsSpawner : MonoBehaviour
     {
         //spawn your birds here
         yield return new WaitForSeconds(0.5f);
-        for (int i = 0; i < 9; i++) 
+        for (int i = 0; i < 7; i++) 
         {
             y = Random.Range(0, 2);
             if (y == 0)

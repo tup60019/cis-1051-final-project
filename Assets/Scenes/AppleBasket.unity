@@ -476,7 +476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &274336939
 Transform:
   m_ObjectHideFlags: 0
@@ -485,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274336938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7411759, y: -0.23587489, z: 7.889371}
+  m_LocalPosition: {x: 0.7411759, y: -0.87, z: 11.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -706,7 +706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.94, z: -3.98}
+  m_LocalPosition: {x: 0, y: 0.94, z: -8.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1061,6 +1061,7 @@ MonoBehaviour:
   punchBox: {fileID: 1294651914}
   mainManager: {fileID: 26929545}
   climber: {fileID: 44280942355995939}
+  redTime: 0
 --- !u!4 &832140734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
@@ -1201,7 +1202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &862710318
 Transform:
   m_ObjectHideFlags: 0
@@ -1480,6 +1481,7 @@ MonoBehaviour:
   mainManager: {fileID: 26929545}
   horizInput: 0
   climberPos: 
+  redTime: 0
 --- !u!61 &1054282919
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1944,7 +1946,7 @@ MonoBehaviour:
   climber: {fileID: 44280942355995939}
   duck: {fileID: 1285782835}
   mainManager: {fileID: 26929545}
-  i: 10
+  redTime: 0
 --- !u!111 &1285782835
 Animation:
   m_ObjectHideFlags: 0
