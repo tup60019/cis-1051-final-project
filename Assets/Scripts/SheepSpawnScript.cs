@@ -30,7 +30,7 @@ public class SheepSpawnScript : MonoBehaviour
     }
     IEnumerator SheepSpawner()
     {
-        for (int i = 0;  i < 12; i++)
+        for (int i = 0;  i < 11; i++)
         {
             
             y = Random.Range(0, 2);
