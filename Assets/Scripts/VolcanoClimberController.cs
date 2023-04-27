@@ -6,6 +6,7 @@ public class VolcanoClimberController : MonoBehaviour
 {
     public ClimberController climber;
     private bool CtoL;
+    private bool LtoC;
     private Animator animator;
     private float timer;
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class VolcanoClimberController : MonoBehaviour
     void Update()
     {
         animator.SetBool("CtoL", CtoL);
+        animator.SetBool("LtoC", LtoC);
         if (climber.climberIsAlive)
         {
             if (Input.GetKeyDown(KeyCode.A))
@@ -38,6 +40,26 @@ public class VolcanoClimberController : MonoBehaviour
             {
                 CtoL = false;
             }
+            
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                LtoC = true;
+                timer = 0.2f;
+            }
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+
+            }
+            else if (timer <= 0)
+            {
+                LtoC = false;
+            }
+            else if (Input.GetKeyUp(KeyCode.D))
+            {
+                LtoC = false;
+            }
+
         }
     }
 }
