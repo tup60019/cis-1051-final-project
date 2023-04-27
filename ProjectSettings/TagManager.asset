@@ -10,6 +10,8 @@ TagManager:
   - Waterfall
   - Mountains
   - Volcano
+  - AppleBasket
+  - VolcanoAttack
   layers:
   - Default
   - TransparentFX

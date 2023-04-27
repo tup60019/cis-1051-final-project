@@ -9,6 +9,9 @@ public class VolcanoClimberController : MonoBehaviour
     private bool LtoC;
     private Animator animator;
     private float timer;
+    public MainManager mainManager;
+    public float immunity = 0;
+    public GameObject deadClimber;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +62,30 @@ public class VolcanoClimberController : MonoBehaviour
             {
                 LtoC = false;
             }
+            if (immunity > 0)
+            {
+                immunity -= Time.deltaTime;
+            }
 
         }
+        if (!climber.climberIsAlive)
+        {
+            for (int i = 0; i<1; i++)
+            {
+                Instantiate(deadClimber, transform.position, transform.rotation);
+            }
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("VolcanoAttack") && immunity <= 0)
+        {
+            mainManager.mistakes++;
+            immunity = 1.5f;
+        }
+
+
     }
 }

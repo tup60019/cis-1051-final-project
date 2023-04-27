@@ -466,6 +466,54 @@ Transform:
   m_Father: {fileID: 853897544}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &300287306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300287307}
+  - component: {fileID: 300287308}
+  m_Layer: 0
+  m_Name: Volcano Boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &300287307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300287306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.56, y: 9.65, z: 29.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1437910691}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &300287308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300287306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff81ee0abd86be0488cec3cd96113495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lavaHitbox: {fileID: 2555739513429722804, guid: a8e4600e2c2acf94b869852024fc6dd9, type: 3}
+  climber: {fileID: 1245674678}
+  fireBall: {fileID: 6889087507057802879, guid: 8a9539e6a0009ee41bed954ac529687e, type: 3}
+  direction: 0
 --- !u!1 &337517065
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.94, z: 24.8}
+  m_LocalPosition: {x: 0, y: 0.94, z: 25.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1594,7 +1642,7 @@ GameObject:
   - component: {fileID: 1245674684}
   m_Layer: 0
   m_Name: Volcano Climber
-  m_TagString: Untagged
+  m_TagString: Climber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1648,7 +1696,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.013371706, y: -0.10371494}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1659,7 +1707,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.4177334, y: 3.934905}
   m_EdgeRadius: 0
 --- !u!212 &1245674682
 SpriteRenderer:
@@ -1746,6 +1794,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climber: {fileID: 44280942355995939}
+  mainManager: {fileID: 26929545}
+  immunity: 0
+  deadClimber: {fileID: 195610282146469882, guid: 0c5e205199b86b844a143a9399f11e76, type: 3}
 --- !u!1 &1278668298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,6 +2200,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1245674679}
+  - {fileID: 300287307}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

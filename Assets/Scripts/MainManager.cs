@@ -12,7 +12,7 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {
-        if (mistakes == 10)
+        if (mistakes >= 3)
         {
             GameOver();
             mistakes = 0;
