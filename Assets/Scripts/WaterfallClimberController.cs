@@ -9,6 +9,7 @@ public class WaterfallClimberController : MonoBehaviour
     public MainManager mainManager;
     private bool punchCooldown = false;
     public ClimberController climber;
+    public float redTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,16 @@ public class WaterfallClimberController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (redTime > 0)
+        {
+            Color c = GetComponent<SpriteRenderer>().color = Color.red;
 
+        }
+        redTime -= Time.deltaTime;
+        if (redTime <= 0)
+        {
+            Color g = GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
     IEnumerator Punch()
     {
