@@ -12,6 +12,7 @@ public class VolcanoClimberController : MonoBehaviour
     public MainManager mainManager;
     public float immunity = 0;
     public GameObject deadClimber;
+    public float redTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +69,16 @@ public class VolcanoClimberController : MonoBehaviour
             }
 
         }
+        if (redTime > 0)
+        {
+            Color c = GetComponent<SpriteRenderer>().color = Color.red;
+
+        }
+        redTime -= Time.deltaTime;
+        if (redTime <= 0)
+        {
+            Color g = GetComponent<SpriteRenderer>().color = Color.white;
+        }
         if (!climber.climberIsAlive)
         {
             for (int i = 0; i<1; i++)
@@ -84,6 +95,7 @@ public class VolcanoClimberController : MonoBehaviour
         {
             mainManager.mistakes++;
             immunity = 1.5f;
+            redTime = 1.5f;
         }
 
 
