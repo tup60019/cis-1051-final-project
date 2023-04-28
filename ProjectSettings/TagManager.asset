@@ -11,7 +11,11 @@ TagManager:
   - Mountains
   - Volcano
   - AppleBasket
-  - HillsEnemy
+
+  - VolcanoAttack
+
+
+
   layers:
   - Default
   - TransparentFX

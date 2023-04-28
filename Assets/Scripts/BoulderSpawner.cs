@@ -11,6 +11,8 @@ public class BoulderSpawner : MonoBehaviour
     public MountainMover mountainMover;
     public GameObject mountains;
     public GameObject volcano;
+    public MainManager mainManager;
+    public CameraMovement cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,8 @@ public class BoulderSpawner : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         mountainMover.mountainSpeed = 1.6f;
+        mainManager.cameraPos = 24.8f;
+        cam.camSpeed = 1.0f;   
         yield return new WaitForSeconds(10);
         
         
