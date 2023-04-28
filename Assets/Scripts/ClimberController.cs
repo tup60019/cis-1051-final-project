@@ -11,6 +11,7 @@ public class ClimberController : MonoBehaviour
     public bool climberIsAlive = true;
     public MainManager mainManager;
     public bool onCooldown = false;
+    public float redTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,16 @@ public class ClimberController : MonoBehaviour
 
             }
         }
+        if (redTime > 0)
+        {
+            Color c = GetComponent<SpriteRenderer>().color = Color.red;
 
+        }
+        redTime -= Time.deltaTime;
+        if (redTime <= 0)
+        {
+            Color g = GetComponent<SpriteRenderer>().color = Color.white;
+        }
         if (transform.position.y < -10)
         {
             Destroy(gameObject);
@@ -57,7 +67,7 @@ public class ClimberController : MonoBehaviour
         {
 
             mainManager.mistakes++;
-
+            redTime = 0.7f;
         }
     }
     IEnumerator BasketCooldown()
