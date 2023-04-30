@@ -13,16 +13,28 @@ public class BoulderSpawner : MonoBehaviour
     public GameObject volcano;
     public MainManager mainManager;
     public CameraMovement cam;
+    public GameObject tooltip;
+    public ClimberController climber;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnBoulders());
     }
 
-
+    private void Update()
+    {
+        if (!climber.climberIsAlive)
+        {
+            StopAllCoroutines();
+        }
+    }
 
     IEnumerator SpawnBoulders()
     {
+        tooltip.SetActive(true);
+        yield return new WaitForSeconds(3);
+        tooltip.SetActive(false);
+
         for (int y = 0; y < 32; y++)
         {
             GameObject[] spawnLoc = { L, R,};
@@ -34,10 +46,13 @@ public class BoulderSpawner : MonoBehaviour
         mountainMover.mountainSpeed = 1.6f;
         mainManager.cameraPos = 24.8f;
         cam.camSpeed = 1.0f;   
-        yield return new WaitForSeconds(10);
         
         
+        yield return new WaitForSeconds(7);
         volcano.SetActive(true);
+        yield return new WaitForSeconds(3);
+
         mountains.SetActive(false);
+        
     }
 }

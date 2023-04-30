@@ -7,17 +7,29 @@ public class AppleSpawner : MonoBehaviour
     public GameObject apple;
     private float xVel;
     private float yVel = 300;
-
+    public GameObject tooltip;
+    public ClimberController climber;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ThrowApple());
     }
 
+    private void Update()
+    {
 
+        if (!climber.climberIsAlive)
+        {
+            StopAllCoroutines();
+        }
+    }
 
     IEnumerator ThrowApple()
     {
+        tooltip.SetActive(true);
+        yield return new WaitForSeconds(3);
+        tooltip.SetActive(false);
+
         for(int i = 0; i < 8; i++)
         {
             xVel = Random.Range(50, 300);

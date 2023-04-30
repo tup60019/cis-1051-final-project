@@ -11,16 +11,25 @@ public class AppleSpawnerR : MonoBehaviour
     public MainManager mainManager;
     public GameObject hills;
     public GameObject appleBasket;
+    public ClimberController climber;
     void Start()
     {
         StartCoroutine(ThrowAppleR());
         
     }
 
+    private void Update()
+    {
+        if (!climber.climberIsAlive)
+        {
+            StopAllCoroutines();
+        }
+    }
 
     IEnumerator ThrowAppleR()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(4);
+        
         for (int i = 0; i < 8; i++)
         {
             
@@ -34,8 +43,9 @@ public class AppleSpawnerR : MonoBehaviour
         //do stuff to transition
         
         mainManager.cameraPos = -2.2f;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         hills.SetActive(true);
+
         appleBasket.SetActive(false);
         
         

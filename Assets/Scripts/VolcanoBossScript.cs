@@ -10,6 +10,8 @@ public class VolcanoBossScript : MonoBehaviour
     private float xVel;
     private float yVel = 400;
     public int direction;
+    public GameObject tooltip;
+    public ClimberController climberController;
     void Start()
     {
         StartCoroutine(AttackSequence());
@@ -18,11 +20,17 @@ public class VolcanoBossScript : MonoBehaviour
 
     void Update()
     {
-        
+        if (!climberController.climberIsAlive)
+        {
+            StopAllCoroutines();
+        }
     }
 
     IEnumerator AttackSequence()
     {
+        tooltip.SetActive(true);
+        yield return new WaitForSeconds(5);
+        tooltip.SetActive(false);
         
         StartCoroutine(Fireballs());
         yield return new WaitForSeconds(6);

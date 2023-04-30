@@ -14,6 +14,8 @@ public class HillsSpawner : MonoBehaviour
     public GameObject[] birds;
     private int z;
     private int y;
+    public GameObject tooltip;
+    public ClimberController climber;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +33,18 @@ public class HillsSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!climber.climberIsAlive)
+        {
+            StopAllCoroutines();
+        }
     }
     
     IEnumerator BirdSpawner()
     {
+        tooltip.SetActive(true);
+        yield return new WaitForSeconds(3);
+        tooltip.SetActive(false);
+
         //spawn your birds here
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < 7; i++) 
@@ -62,6 +71,7 @@ public class HillsSpawner : MonoBehaviour
         mainManager.cameraPos = 11f;
         yield return new WaitForSeconds(3);
         waterfall.SetActive(true);
+        yield return new WaitForSeconds(2);
         hills.SetActive(false);
 
     }

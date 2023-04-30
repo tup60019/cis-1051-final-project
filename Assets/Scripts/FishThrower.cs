@@ -12,7 +12,8 @@ public class FishThrower : MonoBehaviour
     public MainManager mainManager;
     public GameObject mountains;
     public GameObject waterfall;
-
+    public GameObject tooltip;
+    public ClimberController climber;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,22 @@ public class FishThrower : MonoBehaviour
         StartCoroutine(ThrowFish());
     }
 
+    private void Update()
+    {
+        if (!climber.climberIsAlive)
+        {
+            StopAllCoroutines();
+        }
+    }
 
     IEnumerator ThrowFish()
     {
+        tooltip.SetActive(true);
+        yield return new WaitForSeconds(3);
+        tooltip.SetActive(false);
+
         GameObject[] possibleFish = { Fish, Bombfish };
-        for (int i = 0; i < 32; i++)
+        for (int i = 0; i < 50; i++)
         {
             fishType = Random.Range(0, 2);
             GameObject chosenFish = Instantiate(possibleFish[fishType], transform.position, transform.rotation);

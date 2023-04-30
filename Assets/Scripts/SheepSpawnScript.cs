@@ -10,6 +10,7 @@ public class SheepSpawnScript : MonoBehaviour
     public GameObject[] sheeps;
     private int z;
     private int y;
+    public ClimberController climber;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +27,16 @@ public class SheepSpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!climber.climberIsAlive)
+        {
+            StopAllCoroutines();
+        }
     }
     IEnumerator SheepSpawner()
     {
+;
+        yield return new WaitForSeconds(3);
+
         for (int i = 0;  i < 11; i++)
         {
             
