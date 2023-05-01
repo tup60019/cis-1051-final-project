@@ -40,14 +40,14 @@ public class VolcanoBossScript : MonoBehaviour
     IEnumerator AttackSequence()
     {
         tooltip.SetActive(true);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         tooltip.SetActive(false);
         
         StartCoroutine(Fireballs());
         yield return new WaitForSeconds(6);
         StartCoroutine(TrackingLava());
         yield return new WaitForSeconds(5);
-        /*
+        
         StartCoroutine(Fireballs());
         yield return new WaitForSeconds(6);
         StartCoroutine(TrackingLava());
@@ -60,7 +60,8 @@ public class VolcanoBossScript : MonoBehaviour
         yield return new WaitForSeconds(6);
         StartCoroutine(TrackingLava());
         yield return new WaitForSeconds(5);
-        */
+        StartCoroutine(Fireballs());
+        yield return new WaitForSeconds(6);
         ded = true;
         yield return new WaitForSeconds(7);
         win.SetActive(true);

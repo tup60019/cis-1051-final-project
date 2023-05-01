@@ -41,11 +41,11 @@ public class FishThrower : MonoBehaviour
             fishType = Random.Range(0, 2);
             GameObject chosenFish = Instantiate(possibleFish[fishType], transform.position, transform.rotation);
             chosenFish.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(-400, 300));
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.3f);
         }
         yield return new WaitForSeconds(1);
         mainManager.cameraPos = 19f;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         waterfall.SetActive(false);
         mountains.SetActive(true);
     }

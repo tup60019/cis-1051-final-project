@@ -30,7 +30,7 @@ public class AppleSpawner : MonoBehaviour
         yield return new WaitForSeconds(3);
         tooltip.SetActive(false);
 
-        for(int i = 0; i < 8; i++)
+        for(int i = 0; i < 10; i++)
         {
             xVel = Random.Range(50, 300);
             GameObject ball = Instantiate(apple, transform.position, transform.rotation);

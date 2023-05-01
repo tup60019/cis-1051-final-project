@@ -30,7 +30,7 @@ public class AppleSpawnerR : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 10; i++)
         {
             
             xVelR = Random.Range(50, 300);
