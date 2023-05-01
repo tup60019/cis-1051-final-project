@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class VolcanoBossScript : MonoBehaviour
@@ -12,8 +13,14 @@ public class VolcanoBossScript : MonoBehaviour
     public int direction;
     public GameObject tooltip;
     public ClimberController climberController;
+    public bool ded = false;
+    public GameObject volc;
+    private float dedSpeed = 4;
+    public bool attacking;
+    public GameObject win;
     void Start()
     {
+
         StartCoroutine(AttackSequence());
     }
 
@@ -23,6 +30,10 @@ public class VolcanoBossScript : MonoBehaviour
         if (!climberController.climberIsAlive)
         {
             StopAllCoroutines();
+        }
+        if (ded)
+        {
+            volc.transform.Translate(Vector2.down * Time.deltaTime * dedSpeed);
         }
     }
 
@@ -36,6 +47,7 @@ public class VolcanoBossScript : MonoBehaviour
         yield return new WaitForSeconds(6);
         StartCoroutine(TrackingLava());
         yield return new WaitForSeconds(5);
+        /*
         StartCoroutine(Fireballs());
         yield return new WaitForSeconds(6);
         StartCoroutine(TrackingLava());
@@ -48,19 +60,27 @@ public class VolcanoBossScript : MonoBehaviour
         yield return new WaitForSeconds(6);
         StartCoroutine(TrackingLava());
         yield return new WaitForSeconds(5);
+        */
+        ded = true;
+        yield return new WaitForSeconds(7);
+        win.SetActive(true);
     }
     public IEnumerator TrackingLava()
     {
-        //play telegraph animation here to signal attack
+        
         yield return new WaitForSeconds(1);
+        attacking = true;
         GameObject wall = Instantiate(lavaHitbox, climber.transform.position + new Vector3(0, 50, -7), climber.transform.rotation);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
+        attacking = false;
+        yield return new WaitForSeconds(2);
         
         Destroy(wall);
     }
 
     public IEnumerator Fireballs()
     {
+        attacking = true;
         //int direction 0 = L 1=C 2=R
         for (int i = 0; i < 10; i++)
         {
@@ -83,6 +103,7 @@ public class VolcanoBossScript : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
 
         }
+        attacking = false;
 
     }
 }
