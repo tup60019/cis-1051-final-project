@@ -5,6 +5,7 @@ using UnityEngine;
 public class PunchScript : MonoBehaviour
 {
     public MainManager mainManager;
+    public AudioSource slap;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class PunchScript : MonoBehaviour
         {
             GameObject hit = collision.gameObject;
             hit.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(300, 900));
+            slap.Play();
         }
         else if (collision.gameObject.name == "Bombfish(Clone)")
         {
