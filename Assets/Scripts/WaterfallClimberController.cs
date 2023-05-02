@@ -10,21 +10,26 @@ public class WaterfallClimberController : MonoBehaviour
     private bool punchCooldown = false;
     public ClimberController climber;
     public float redTime = 0;
+    public bool Space = false;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("Space", Space);
         if (climber.climberIsAlive)
         {
             if (Input.GetKeyDown(KeyCode.Space) && punchCooldown == false)
             {
                 StartCoroutine(Punch());
+                StartCoroutine(PunchAnimation());
             }
+
         }
         if (transform.position.y < -10)
         {
@@ -43,9 +48,17 @@ public class WaterfallClimberController : MonoBehaviour
     }
     IEnumerator Punch()
     {
+        
         punchBox.SetActive(true);
         yield return new WaitForSeconds(0.05f);
         punchBox.SetActive(false);
+        
 
+    }
+    IEnumerator PunchAnimation()
+    {
+        Space = true;
+        yield return new WaitForSeconds(.2f);
+        Space = false;
     }
 }

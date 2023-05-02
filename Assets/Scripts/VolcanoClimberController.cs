@@ -7,6 +7,9 @@ public class VolcanoClimberController : MonoBehaviour
     public ClimberController climber;
     private bool CtoL;
     private bool LtoC;
+    private bool Left;
+    private bool Right;
+    private bool Center;
     private Animator animator;
     private float timer;
     public MainManager mainManager;
@@ -24,11 +27,15 @@ public class VolcanoClimberController : MonoBehaviour
     {
         animator.SetBool("CtoL", CtoL);
         animator.SetBool("LtoC", LtoC);
+        animator.SetBool("Left", Left);
+        animator.SetBool("Right", Right);
+        animator.SetBool("Center", Center);
         if (climber.climberIsAlive)
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
                 CtoL = true;
+                Left = true;
                 timer = 0.2f;
             }
             if (timer > 0)
@@ -39,15 +46,18 @@ public class VolcanoClimberController : MonoBehaviour
             else if (timer <= 0)
             {
                 CtoL = false;
+                Left = false;
             }
             else if (Input.GetKeyUp(KeyCode.A))
             {
                 CtoL = false;
+                Left = false;
             }
             
             if (Input.GetKeyDown(KeyCode.D))
             {
                 LtoC = true;
+                Center = true;
                 timer = 0.2f;
             }
             if (timer > 0)
@@ -58,10 +68,12 @@ public class VolcanoClimberController : MonoBehaviour
             else if (timer <= 0)
             {
                 LtoC = false;
+                Center = false;
             }
             else if (Input.GetKeyUp(KeyCode.D))
             {
                 LtoC = false;
+                Center = false;
             }
             if (immunity > 0)
             {

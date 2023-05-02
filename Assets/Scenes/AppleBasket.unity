@@ -1522,7 +1522,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 52.8
+  field of view: 54.943554
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1548,8 +1548,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.94, z: -9.27}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.94, z: -13.42}
+  m_LocalScale: {x: 1, y: 1, z: -1.9155}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2193,6 +2193,7 @@ MonoBehaviour:
   mainManager: {fileID: 26929545}
   climber: {fileID: 44280942355995939}
   redTime: 0
+  Space: 0
 --- !u!4 &832140734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
@@ -2490,6 +2491,7 @@ GameObject:
   - component: {fileID: 1054282919}
   - component: {fileID: 1054282918}
   - component: {fileID: 1054282921}
+  - component: {fileID: 1054282922}
   m_Layer: 0
   m_Name: Mountain Climber
   m_TagString: Climber
@@ -2546,7 +2548,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 4.56}
+    oldSize: {x: 2.037661, y: 5.6975}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2596,7 +2598,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -761143539, guid: c93006d790f3343bd8ea950546ec90fd, type: 3}
+  m_Sprite: {fileID: -907969990, guid: f6d60d6b22ee941eaa054ccda5bc1871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2628,6 +2630,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1054282922
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054282916}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b8724159c7ee84312aabf50f538fc75a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1060694642
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,7 +3276,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 4.56}
+    oldSize: {x: 2.037661, y: 5.6975}
     newSize: {x: 2, y: 4.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3304,7 +3326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -761143539, guid: c93006d790f3343bd8ea950546ec90fd, type: 3}
+  m_Sprite: {fileID: -907969990, guid: f6d60d6b22ee941eaa054ccda5bc1871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3553,6 +3575,7 @@ GameObject:
   - component: {fileID: 1285782831}
   - component: {fileID: 1285782834}
   - component: {fileID: 1285782835}
+  - component: {fileID: 1285782836}
   m_Layer: 0
   m_Name: Hills Climber
   m_TagString: Climber
@@ -3569,8 +3592,8 @@ Transform:
   m_GameObject: {fileID: 1285782829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.13, y: 0.45, z: -5.11}
-  m_LocalScale: {x: 0.79, y: 0.79, z: 0.79}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 274336939}
   m_RootOrder: 2
@@ -3609,18 +3632,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012588739, y: 0}
+  m_Offset: {x: -0.03546202, y: -0.5143608}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 4.56}
+    oldSize: {x: 1.9366667, y: 5.9970517}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3315728, y: 4.56}
+  m_Size: {x: 1.0172937, y: 4.7344866}
   m_EdgeRadius: 0
 --- !u!212 &1285782833
 SpriteRenderer:
@@ -3663,7 +3686,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -761143539, guid: c93006d790f3343bd8ea950546ec90fd, type: 3}
+  m_Sprite: {fileID: -693210750, guid: 607b53b81d5a04d7995b90ff0c946a30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3707,6 +3730,26 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!95 &1285782836
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285782829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75256b97074b6ff4c99a4050f41d05e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1288459960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3852,7 +3895,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8679245, g: 0.13510147, b: 0.13510147, a: 1}
+  m_Color: {r: 0.8679245, g: 0.13510147, b: 0.13510147, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3890,7 +3933,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.062670946, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3901,7 +3944,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.1443458, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1294651918
 MonoBehaviour:
@@ -4699,7 +4742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662411891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.34, y: -1.06, z: -5.11}
+  m_LocalPosition: {x: -11.34, y: -0.5, z: -5.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5008,6 +5051,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 853897544}
     m_Modifications:
+    - target: {fileID: 44280942355995938, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3a5aed5d8b5c24d2195e1418fbc5526b, type: 2}
     - target: {fileID: 44280942530654620, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: m_Name
       value: Waterfall Climber
@@ -5251,7 +5298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056147332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.34, y: 1.5, z: -5.11}
+  m_LocalPosition: {x: -11.34, y: 2, z: -5.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5286,6 +5333,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 26929545}
     - target: {fileID: 44280942530654622, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_Size.x
+      value: 3.526804
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654622, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_Size.y
+      value: 14.757597
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654622, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.005872011
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654622, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.334935
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654622, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 5.81
       objectReference: {fileID: 0}
@@ -5310,12 +5373,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.119999
       objectReference: {fileID: 0}
     - target: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7299995
+      value: -3.06
       objectReference: {fileID: 0}
     - target: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5348,6 +5423,10 @@ PrefabInstance:
     - target: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 44280942530654689, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e7746ba9de5224896c9ddcfcc313b0, type: 3}
