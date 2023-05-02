@@ -15,7 +15,7 @@ public class MainManager : MonoBehaviour
 
 
 
-        if (mistakes == 10090)
+        if (mistakes == 10)
 
         {
             GameOver();
